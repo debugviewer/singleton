@@ -12,9 +12,9 @@ public:
 #define singleton_user Singleton<User>::getInstance()
 
 int main() {
-	printf("singleton demo\n");
-	Singleton<User>::getInstance()->hello();
-
+	printf("main thread begin......\n");
+	singleton_user->hello();
+	printf("main thread end......\n");
 	return 0;
 }
 
