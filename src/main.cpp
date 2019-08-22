@@ -1,12 +1,13 @@
-﻿#include "Singleton.h"
+#include "Singleton.h"
 #include <stdio.h>
 
-class User{
+class User {
+	friend class Singleton<User>;
 public:
+	void hello() { printf("hello\n"); }
+private:
 	User() { printf("User()\n"); }
 	virtual ~User() { printf("~User()\n"); }
-
-	void hello() { printf("hello\n"); }
 };
 
 #define singleton_user Singleton<User>::getInstance()
